@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta
       name="description"
@@ -17,13 +20,16 @@
       content="Dan's Dungeons & Dragons Dice Rolling Site"
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://res.cloudinary.com/dferdwpfs/image/upload/q_auto/v1565364696/danbudadotcom/dan_rptcna.jpg"
-    />
-    <meta property="og:url" content="https://danbuda.com" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://dansdice.netlify.com/" />
     <title>Dan's Dungeons & Dragons Dice Rolling Site</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -34,13 +40,27 @@
   <body>
     <div id="wrapper">
       <header><h1>Dan's D&D Dice</h1></header>
-      <div id="four"><img src="images/d4.png" /></div>
-      <div id="six"><img src="images/d6.png" /></div>
-      <div id="eight"><img src="images/d8.png" /></div>
-      <div id="ten"><img src="images/d10.png" /></div>
-      <div id="twelve"><img src="images/d12.png" /></div>
-      <div id="twenty"><img src="images/d20.png" /></div>
-      <div id="hundred"><img src="images/d100.png" /></div>
+      <div data-number="4" class="die" id="four">
+        <img src="images/d4.png" />
+      </div>
+      <div data-number="6" class="die" id="six">
+        <img src="images/d6.png" />
+      </div>
+      <div data-number="8" class="die" id="eight">
+        <img src="images/d8.png" />
+      </div>
+      <div data-number="10" class="die" id="ten">
+        <img src="images/d10.png" />
+      </div>
+      <div data-number="12" class="die" id="twelve">
+        <img src="images/d12.png" />
+      </div>
+      <div data-number="20" class="die" id="twenty">
+        <img src="images/d20.png" />
+      </div>
+      <div data-number="100" class="die" id="hundred">
+        <img src="images/d100.png" />
+      </div>
       <div id="roll">0</div>
       <footer>
         <p>A <a href="https://danbuda.com">Dan Buda</a> Joint</p>
