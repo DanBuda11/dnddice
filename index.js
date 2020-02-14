@@ -10,7 +10,7 @@ const roll = document.getElementById('roll');
 const dice = document.querySelectorAll('.die');
 dice.forEach(die => {
   die.addEventListener('click', () => {
-    rollDie(die.dataset.number)}
+    rollDie(die.dataset.number, die.dataset.sides)}
     )
 });
 
@@ -31,7 +31,11 @@ dice.forEach(die => {
 //   }
 // }
 
-function rollDie(x) {
+function rollDie(x, y) {
+  document.querySelector(`.die[data-sides="${y}"`).classList.add('rotating');
+  setTimeout(() => {
+    document.querySelector(`.die[data-sides="${y}"`).classList.remove('rotating');
+  }, 1200);
   let counter = 0;
   let interval = setInterval(() => {
     roll.style.color = 'lightblue';
