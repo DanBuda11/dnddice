@@ -10,43 +10,40 @@ const roll = document.getElementById('roll');
 const dice = document.querySelectorAll('.die');
 dice.forEach(die => {
   die.addEventListener('click', () => {
-    rollDie(die.dataset.number, die.dataset.sides)}
+    rollDie(die.dataset.number)}
     )
 });
 
-// Probably need to disable all dice/buttons while this is running then enable once roll is complete
-// function rollDie(x) { 
-//     window.setInterval(() => {
-//       const number = Math.ceil(Math.random() * x);
-//       roll.innerHTML = number;}, 500)
-   
-// }
-
-// function rollDie(x) {
-//   for (i = 0; i < 7; i++) {
-//     window.setTimeout(() => {
-//       let number = Math.ceil(Math.random() * x);
-//       roll.innerHTML = number;
-//     }, 500)
-//   }
-// }
-
-function rollDie(x, y) {
-  document.querySelector(`.die[data-sides="${y}"`).classList.add('rotating');
+function rollDie(x) {
+  document.querySelector(`.die[data-number="${x}"`).classList.add('rotating');
+  dice.forEach(die => {
+    die.setAttribute('disabled', 'disabled');
+  })
   setTimeout(() => {
-    document.querySelector(`.die[data-sides="${y}"`).classList.remove('rotating');
-  }, 1200);
+    document.querySelector(`.die[data-number="${x}"`).classList.remove('rotating');
+  }, 600);
+  let number;
   let counter = 0;
   let interval = setInterval(() => {
     roll.style.color = 'lightblue';
     counter+= 1;
     if(counter === 6) {
-      let number = Math.ceil(Math.random() * x);
-      roll.innerHtml = number;
+      number = Math.ceil(Math.random() * parseInt(x));
+      roll.innerHTML = number;
       roll.style.color = 'black';
+      if (x === '20' && number === 20) {
+        roll.classList.add('nat-twenty');
+        setTimeout(() => {
+          roll.classList.remove('nat-twenty');
+        }, 1000);
+      }
+      dice.forEach(die => {
+        die.removeAttribute('disabled');
+      })
       clearInterval(interval);
+    } else {
+      number = Math.ceil(Math.random() * parseInt(x));
+      roll.innerHTML = number;
     }
-    let number = Math.ceil(Math.random() * x);
-    roll.innerHTML = number;
-  }, 200);
+  }, 100);
 }
