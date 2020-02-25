@@ -28,7 +28,8 @@ function rollDie(x) {
     roll.style.color = 'lightblue';
     counter+= 1;
     if(counter === 6) {
-      number = Math.ceil(Math.random() * parseInt(x));
+      // number = Math.ceil(Math.random() * parseInt(x));
+      number = 20;
       roll.innerHTML = number;
       roll.style.color = 'black';
       if (x === '20' && number === 20) {
