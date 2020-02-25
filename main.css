@@ -62,9 +62,10 @@ h1 {
   animation: natTwenty 1s linear;
 }
 
-/* .die {
-  flex-basis: 50%;
-} */
+.die {
+  border: none;
+  height: 80px;
+}
 
 img {
   height: 80px;
