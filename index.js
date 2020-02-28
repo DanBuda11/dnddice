@@ -28,10 +28,11 @@ function rollDie(x) {
     roll.style.color = 'lightblue';
     counter+= 1;
     if(counter === 6) {
-      // number = Math.ceil(Math.random() * parseInt(x));
-      number = 20;
+      number = Math.ceil(Math.random() * parseInt(x));
+      // Set number = 20 when testing nat20 animation
+      // number = 20;
       roll.innerHTML = number;
-      roll.style.color = 'black';
+      roll.style.color = 'white';
       if (x === '20' && number === 20) {
         roll.classList.add('nat-twenty');
         setTimeout(() => {

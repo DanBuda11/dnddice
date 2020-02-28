@@ -20,6 +20,7 @@ html {
   flex-wrap: wrap;
   justify-content: center; */
   height: 100vh;
+  background-color: #000;
 }
 
 header {
@@ -28,7 +29,7 @@ header {
 
 h1 {
   margin: 0;
-  /* color: #fff; */
+  color: #fff;
 }
 
 @keyframes rotating {
@@ -109,6 +110,7 @@ footer {
   grid-row: 7;
   grid-column: 1 / span 2;
   /* flex-basis: 100%; */
+  color: #fff;
 }
 
 footer p {
@@ -117,5 +119,6 @@ footer p {
 }
 
 footer p a {
-  color: #000;
+  /* color: #000; */
+  color: #fff;
 }
