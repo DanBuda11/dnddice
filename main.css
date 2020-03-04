@@ -11,11 +11,15 @@ html {
 }
 
 #wrapper {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 10% (80% / 5) (80% / 5) (80% / 5) (80% / 5) (80% / 5) 10%;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
+  /* display: grid; */
+  /* grid-template-columns: 50% 50%; */
+  /* grid-template-rows: 10% (80% / 5) (80% / 5) (80% / 5) (80% / 5) (80% / 5) 10%; */
+  /* justify-items: center; */
+  /* align-items: center; */
   /* display: flex;
   flex-wrap: wrap;
   justify-content: center; */
@@ -24,7 +28,10 @@ html {
 }
 
 header {
-  grid-column: 1 / span 2;
+  /* grid-column: 1 / span 2; */
+  flex-basis: 100%;
+  padding: 2rem;
+  text-align: center;
 }
 
 h1 {
@@ -85,9 +92,46 @@ h1 {
   animation: shake 0.5s linear;
 }
 
-.die {
+.die-wrapper {
+  flex-basis: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.die-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.die-btn {
+  background-color: red;
+  border-radius: 50%;
+  font-size: 25px;
+  padding: 1rem;
+  width: 50px;
   border: none;
-  height: 80px;
+  color: white;
+  z-index: 3;
+}
+
+.die-btn-plus {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.die-btn-roll {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.die {
+  flex-basis: 50%;
+  border: none;
+  /* height: 80px; */
   background-color: transparent;
 }
 
@@ -96,19 +140,21 @@ img {
 }
 
 #hundred {
-  grid-column: 1 / span 2;
+  flex-basis: 100%;
+  /* grid-column: 1 / span 2; */
 }
 
 #roll {
-  grid-column: 1 / span 2;
+  /* grid-column: 1 / span 2; */
 
   font-size: 5rem;
   color: lightblue;
 }
 
 footer {
-  grid-row: 7;
-  grid-column: 1 / span 2;
+  flex-basis: 100%;
+  /* grid-row: 7; */
+  /* grid-column: 1 / span 2; */
   /* flex-basis: 100%; */
   color: #fff;
 }

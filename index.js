@@ -14,6 +14,9 @@ dice.forEach(die => {
     )
 });
 
+let counter = 0;
+
+// Roll a single die
 function rollDie(x) {
   document.querySelector(`.die[data-number="${x}"`).classList.add('rotating');
   dice.forEach(die => {
@@ -49,3 +52,13 @@ function rollDie(x) {
     }
   }, 100);
 }
+
+// Roll multiple of the same die
+function rollDice() {
+
+}
+
+// Tap/click the ROLL button to start rolling
+
+
+// Tap/click the CLEAR button to remove any already tapped-on die

@@ -40,9 +40,15 @@
   <body>
     <div id="wrapper">
       <header><h1>Dan's D&D Dice</h1></header>
-      <button div data-number="4" class="die" id="four">
+      <div class="die-wrapper">
+        <img class="die-img" src="images/d10.png" />
+        <button class="die-btn die-btn-plus">+</button>
+        <button class="die-btn die-btn-roll">20</button>
+      </div>
+
+      <!-- <button data-number="4" class="die" id="four">
         <img src="images/d4.png" />
-      </button>
+      </button> -->
       <button data-number="6" class="die" id="six">
         <img src="images/d6.png" />
       </button>
@@ -61,6 +67,7 @@
       <button data-number="100" class="die" id="hundred">
         <img src="images/d100.png" />
       </button>
+      <div class="dice-rolls"></div>
       <div id="roll">0</div>
       <footer>
         <p>A <a href="https://danbuda.com">Dan Buda</a> Joint</p>
