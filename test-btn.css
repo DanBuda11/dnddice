@@ -1,0 +1,54 @@
+.test-btn-wrapper {
+  height: 200px;
+  width: 200px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.test-btn-card {
+  /* background-color: black; */
+  /* height: 500px; */
+  /* width: 700px; */
+  position: relative;
+  height: 80px;
+  width: 80px;
+}
+
+.test-btn-img {
+  background: no-repeat center/80% url("./images/d20.png");
+  /* background: url("./images/d100.png"); */
+  height: 80px;
+  width: 80px;
+  background-color: black;
+  /* animation: rotating 0.6s linear infinite; */
+}
+
+.test-btn {
+  border-radius: 50%;
+  border: none;
+  background-color: darkgreen;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  padding: 0.3rem 0.6rem;
+}
+
+.test-btn-num {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.test-btn-roll {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.test-btn-output-each,
+.test-btn-output-total {
+  color: white;
+}

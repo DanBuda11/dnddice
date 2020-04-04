@@ -36,8 +36,21 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
     <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="test-btn.css" />
   </head>
   <body>
+    <div class="test-btn-wrapper">
+      <div class="test-btn-card">
+        <div class="test-btn-img"></div>
+        <button class="test-btn test-btn-num">+</button>
+        <button class="test-btn test-btn-roll" data-number="20">1</button>
+      </div>
+      <div class="test-btn-output">
+        <p class="test-btn-output-each"></p>
+        <p class="test-btn-output-total"></p>
+      </div>
+    </div>
+
     <div id="wrapper">
       <header><h1>Dan's D&D Dice</h1></header>
       <!-- <div class="die-wrapper">
@@ -74,5 +87,6 @@
       </footer>
     </div>
     <script src="index.js"></script>
+    <script src="test-btn.js"></script>
   </body>
 </html>
