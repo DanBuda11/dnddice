@@ -1,64 +1,33 @@
-// const four = document.getElementById('four');
-// const six = document.getElementById('six');
-// const eight = document.getElementById('eight');
-// const ten = document.getElementById('ten');
-// const twelve = document.getElementById('twelve');
-// const twenty = document.getElementById('twenty');
-// const hundred = document.getElementById('hundred');
-const roll = document.getElementById('roll');
+const plusBtns = document.querySelectorAll('.die-plus');
+const rollBtns = document.querySelectorAll('.die-roll');
+const eachRoll = document.getElementById('each-roll');
+const totalRoll = document.getElementById('total-roll')
+let dieCounter = 1
 
-const dice = document.querySelectorAll('.die');
-dice.forEach(die => {
-  die.addEventListener('click', () => {
-    rollDie(die.dataset.number)}
-    )
-});
-
-let counter = 0;
-
-// Roll a single die
-function rollDie(x) {
-  document.querySelector(`.die[data-number="${x}"`).classList.add('rotating');
-  dice.forEach(die => {
-    die.setAttribute('disabled', 'disabled');
+rollBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    rollDice(e.target.parentNode.dataset.number);
+    btn.innerHTML = '1'
   })
-  setTimeout(() => {
-    document.querySelector(`.die[data-number="${x}"`).classList.remove('rotating');
-  }, 600);
-  let number;
-  let counter = 0;
-  let interval = setInterval(() => {
-    roll.style.color = 'lightblue';
-    counter+= 1;
-    if(counter === 6) {
-      number = Math.ceil(Math.random() * parseInt(x));
-      // Set number = 20 when testing nat20 animation
-      // number = 20;
-      roll.innerHTML = number;
-      roll.style.color = 'white';
-      if (x === '20' && number === 20) {
-        roll.classList.add('nat-twenty');
-        setTimeout(() => {
-          roll.classList.remove('nat-twenty');
-        }, 1000);
-      }
-      dice.forEach(die => {
-        die.removeAttribute('disabled');
-      })
-      clearInterval(interval);
-    } else {
-      number = Math.ceil(Math.random() * parseInt(x));
-      roll.innerHTML = number;
-    }
-  }, 100);
+})
+
+plusBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    dieCounter++
+    btn.nextElementSibling.innerHTML = dieCounter.toString()
+  })
+})
+
+function rollDice(x) {
+  // console.log(`This die has ${x} sides.`);
+  let rolls = []
+  let sum = 0
+  for (i = 1; i <= dieCounter; i++) {
+    let roll = Math.ceil(Math.random() * parseInt(x))
+    rolls.push(`${roll} +`)
+    sum += roll
+  }
+  eachRoll.innerHTML = rolls.join(' ')
+  totalRoll.innerHTML = sum
+  dieCounter = 1
 }
-
-// Roll multiple of the same die
-function rollDice() {
-
-}
-
-// Tap/click the ROLL button to start rolling
-
-
-// Tap/click the CLEAR button to remove any already tapped-on die

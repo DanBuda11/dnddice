@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="css/test-btn.css" />
   </head>
   <body>
-    <div class="test-btn-wrapper">
+    <!-- <div class="test-btn-wrapper">
       <div class="test-btn-card">
         <div class="test-btn-img"></div>
         <button class="test-btn test-btn-num">+</button>
@@ -45,15 +45,56 @@
         <p class="test-btn-output-each"></p>
         <p class="test-btn-output-total"></p>
       </div>
+    </div> -->
+
+    <div class="wrapper">
+      <header><h1>Dan's D&D Dice</h1></header>
+      <div class="dice">
+        <div class="die-card" data-number="4">
+          <div class="die-img"></div>
+          <button class="die-btn die-plus">+</button>
+          <button class="die-btn die-roll" data-number="4">1</button>
+        </div>
+        <div class="die-card" data-number="6">
+          <div class="die-img"></div>
+          <button class="die-btn die-plus">+</button>
+          <button class="die-btn die-roll" data-number="4">1</button>
+        </div>
+        <div class="die-card" data-number="8">
+          <div class="die-img"></div>
+          <button class="die-btn die-plus">+</button>
+          <button class="die-btn die-roll" data-number="4">1</button>
+        </div>
+        <div class="die-card" data-number="10">
+          <div class="die-img"></div>
+          <button class="die-btn die-plus">+</button>
+          <button class="die-btn die-roll" data-number="4">1</button>
+        </div>
+        <div class="die-card" data-number="12">
+          <div class="die-img"></div>
+          <button class="die-btn die-plus">+</button>
+          <button class="die-btn die-roll" data-number="4">1</button>
+        </div>
+        <div class="die-card" data-number="20">
+          <div class="die-img"></div>
+          <button class="die-btn die-plus">+</button>
+          <button class="die-btn die-roll" data-number="4">1</button>
+        </div>
+        <div class="die-card" data-number="100">
+          <div class="die-img"></div>
+          <button class="die-btn die-plus">+</button>
+          <button class="die-btn die-roll" data-number="4">1</button>
+        </div>
+      </div>
+      <div id="each-roll"></div>
+      <div id="total-roll">0</div>
+      <footer>
+        <p>A <a href="https://danbuda.com">Dan Buda</a> Joint</p>
+      </footer>
     </div>
 
-    <div id="wrapper">
-      <header><h1>Dan's D&D Dice</h1></header>
-      <!-- <div class="die-wrapper">
-        <img class="die-img" src="images/d10.png" />
-        <button class="die-btn die-btn-plus">+</button>
-        <button class="die-btn die-btn-roll">20</button>
-      </div> -->
+    <!-- <div id="wrapper">
+      
 
       <button data-number="4" class="die" id="four">
         <img src="images/d4.png" />
@@ -78,11 +119,10 @@
       </button>
       <div class="dice-rolls"></div>
       <div id="roll">0</div>
-      <footer>
-        <p>A <a href="https://danbuda.com">Dan Buda</a> Joint</p>
-      </footer>
-    </div>
+      
+    </div> -->
+
     <script src="js/index.js"></script>
-    <script src="js/test-btn.js"></script>
+    <!-- <script src="js/test-btn.js"></script> -->
   </body>
 </html>

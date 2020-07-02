@@ -16,7 +16,7 @@
   width: 80px; }
 
 .test-btn-img {
-  background: no-repeat center/80% url("./images/d20.png");
+  background: no-repeat center/80% url("../images/d20.png");
   /* background: url("./images/d100.png"); */
   height: 80px;
   width: 80px;
