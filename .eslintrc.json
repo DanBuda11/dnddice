@@ -19,6 +19,8 @@
     "comma-dangle": "off",
     "array-bracket-spacing": "off",
     "no-console": "off",
+    "radix": "warn",
+    "no-plusplus": "warn",
     "prettier/prettier": [
       "error",
       {

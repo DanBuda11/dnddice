@@ -46,10 +46,7 @@ const paths = {
 
 // Compile Sass to CSS in development
 function serveSass() {
-  return src(paths.devSCSS)
-    .pipe(sass())
-    .pipe(dest(paths.devCSS))
-    .pipe(bs.stream());
+  return src(paths.devSCSS).pipe(sass()).pipe(dest(paths.devCSS)).pipe(bs.stream());
 }
 
 // Task to run the BrowserSync server
@@ -117,7 +114,7 @@ function buildJS() {
     .pipe(
       babel({
         presets: ['@babel/env'],
-      }),
+      })
     )
     .pipe(uglify())
     .pipe(size({ showFiles: true }))
@@ -139,14 +136,4 @@ exports.serve = browserSync;
 // Run gulp clean to empty dist folder
 exports.clean = clean;
 // Run gulp build to run production build
-exports.build = series(
-  clean,
-  parallel(
-    buildHTML,
-    buildFavicon,
-    buildCSS,
-    buildNormalize,
-    buildJS,
-    buildImages,
-  ),
-);
+exports.build = series(clean, parallel(buildHTML, buildFavicon, buildCSS, buildNormalize, buildJS, buildImages));

@@ -5,23 +5,23 @@
 // const twelve = document.getElementById('twelve');
 // const twenty = document.getElementById('twenty');
 // const hundred = document.getElementById('hundred');
-const roll = document.getElementById('roll');
+// const roll = document.getElementById('roll');
 
-const dice = document.querySelectorAll('.die');
-dice.forEach((die) => {
-  die.addEventListener('click', () => {
-    rollDie(die.dataset.number);
-  });
-});
+// const dice = document.querySelectorAll('.die');
+// dice.forEach((die) => {
+//   die.addEventListener('click', () => {
+//     rollDie(die.dataset.number);
+//   });
+// });
 
-const counter = 0;
+// const counter = 0;
 
 // Roll a single die
 function rollDie(x) {
-  document.querySelector(`.die[data-number="${x}"`).classList.add('rotating');
-  dice.forEach((die) => {
-    die.setAttribute('disabled', 'disabled');
-  });
+  // document.querySelector(`.die[data-number="${x}"`).classList.add('rotating');
+  // dice.forEach((die) => {
+  //   die.setAttribute('disabled', 'disabled');
+  // });
   setTimeout(() => {
     document.querySelector(`.die[data-number="${x}"`).classList.remove('rotating');
   }, 600);
