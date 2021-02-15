@@ -1,10 +1,12 @@
 const plusBtns = document.querySelectorAll('.die-plus');
+const numBtns = document.querySelectorAll('.die-num');
 const rollBtns = document.querySelectorAll('.die-roll');
 const eachRoll = document.getElementById('each-roll');
 const totalRoll = document.getElementById('total-roll');
 
 function rollDice(x) {
   const thisDie = document.querySelector(`.die-roll[data-number="${x}"]`);
+  const thisNum = document.querySelector(`.die-num[data-number="${x}"]`);
   document.querySelector(`.die-img[data-number="${x}"]`).classList.add('rotating');
 
   plusBtns.forEach((btn) => {
@@ -62,20 +64,27 @@ function rollDice(x) {
   eachRoll.innerHTML = rolls.join(' ');
   totalRoll.innerHTML = sum;
   thisDie.dataset.counter = 1;
+  numBtns.forEach((btn) => {
+    btn.innerHTML = `1d${btn.dataset.number}`;
+  });
 }
 
 rollBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     rollDice(e.target.dataset.number);
-    btn.innerHTML = '1';
   });
 });
 
 plusBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
-    btn.nextElementSibling.dataset.counter = Number(btn.nextElementSibling.dataset.counter) + 1;
-    console.log(btn.nextElementSibling.dataset.counter);
+    const rollBtn = document.querySelector(`.die-roll[data-number="${btn.dataset.number}"]`);
+
+    rollBtn.dataset.counter = Number(rollBtn.dataset.counter) + 1;
+    console.log(rollBtn.dataset.counter);
+
+    // btn.nextElementSibling.dataset.counter = Number(btn.nextElementSibling.dataset.counter) + 1;
+    // console.log(btn.nextElementSibling.dataset.counter);
     // dieCounter++;
-    btn.nextElementSibling.innerHTML = btn.nextElementSibling.dataset.counter.toString();
+    btn.nextElementSibling.innerHTML = `${rollBtn.dataset.counter.toString()}d${btn.dataset.number}`;
   });
 });

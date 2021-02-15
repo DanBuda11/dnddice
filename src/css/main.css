@@ -26,45 +26,45 @@ html {
     grid-template-columns: 50% 50%;
     row-gap: 25px; }
     .wrapper .dice .die-card {
-      justify-self: center;
-      position: relative;
-      height: 70px;
-      width: 70px; }
+      justify-self: center; }
       .wrapper .dice .die-card .die-img {
-        height: 100%;
-        width: 100%; }
-      .wrapper .dice .die-card .die-btn {
-        border-radius: 50%;
-        border: none;
-        background-color: darkgreen;
-        color: white;
-        cursor: pointer;
-        outline: none;
-        padding: 0.3rem 0.6rem; }
-      .wrapper .dice .die-card .die-plus {
-        position: absolute;
-        bottom: 0;
-        left: 0; }
-      .wrapper .dice .die-card .die-roll {
-        position: absolute;
-        bottom: 0;
-        right: 0; }
-    .wrapper .dice .die-card[data-number="4"] > .die-img {
-      background: no-repeat center/80% url("../images/d4.png"); }
+        height: 80px; }
+      .wrapper .dice .die-card .die-btn-wrapper {
+        display: flex; }
+        .wrapper .dice .die-card .die-btn-wrapper .die-btn {
+          border: none;
+          background-color: darkgreen;
+          color: white;
+          cursor: pointer;
+          outline: none; }
+        .wrapper .dice .die-card .die-btn-wrapper .die-plus {
+          width: 30px;
+          border-radius: 40% 0 0 40%; }
+        .wrapper .dice .die-card .die-btn-wrapper .die-num {
+          background-color: darkgreen;
+          color: white;
+          padding: 0.3rem;
+          width: 63px;
+          text-align: center; }
+        .wrapper .dice .die-card .die-btn-wrapper .die-roll {
+          border-radius: 0 40% 40% 0;
+          width: 30px; }
+    .wrapper .dice .die-card[data-number="4"] .die-img {
+      background: no-repeat center/60% url("../images/d4.png"); }
     .wrapper .dice .die-card[data-number="6"] > .die-img {
-      background: no-repeat center/80% url("../images/d6.png"); }
+      background: no-repeat center/60% url("../images/d6.png"); }
     .wrapper .dice .die-card[data-number="8"] > .die-img {
-      background: no-repeat center/80% url("../images/d8.png"); }
+      background: no-repeat center/60% url("../images/d8.png"); }
     .wrapper .dice .die-card[data-number="10"] > .die-img {
-      background: no-repeat center/80% url("../images/d10.png"); }
+      background: no-repeat center/60% url("../images/d10.png"); }
     .wrapper .dice .die-card[data-number="12"] > .die-img {
-      background: no-repeat center/80% url("../images/d12.png"); }
+      background: no-repeat center/60% url("../images/d12.png"); }
     .wrapper .dice .die-card[data-number="20"] > .die-img {
-      background: no-repeat center/80% url("../images/d20.png"); }
+      background: no-repeat center/60% url("../images/d20.png"); }
     .wrapper .dice .die-card[data-number="100"] {
       grid-column: 1 / span 2; }
       .wrapper .dice .die-card[data-number="100"] .die-img {
-        background: no-repeat center/80% url("../images/d100.png"); }
+        background: no-repeat center/60% url("../images/d100.png"); }
   .wrapper #each-roll {
     color: var(--white); }
   .wrapper #total-roll {

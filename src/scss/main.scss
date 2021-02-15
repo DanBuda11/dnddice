@@ -34,57 +34,80 @@ html {
 
     .die-card {
       justify-self: center;
-      position: relative;
-      height: 70px;
-      width: 70px;
+      // display: flex;
+      // flex-direction: column;
+      // position: relative;
+      // height: 80px;
+      // width: 80px;
+      // width: 70px;
+      // margin: 0.5rem;
+
       .die-img {
-        height: 100%;
-        width: 100%;
+        height: 80px;
+        // height: 100%;
+        // width: 100%;
+        // align-self: center;
       }
-      .die-btn {
-        border-radius: 50%;
-        border: none;
-        background-color: darkgreen;
-        color: white;
-        cursor: pointer;
-        outline: none;
-        padding: 0.3rem 0.6rem;
-      }
-      .die-plus {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-      .die-roll {
-        position: absolute;
-        bottom: 0;
-        right: 0;
+
+      .die-btn-wrapper {
+        display: flex;
+
+        .die-btn {
+          // border-radius: 50%;
+          border: none;
+          background-color: darkgreen;
+          color: white;
+          cursor: pointer;
+          outline: none;
+          // padding: 0.3rem 0.6rem;
+        }
+        .die-plus {
+          // position: absolute;
+          // bottom: 0;
+          // left: 0;
+          width: 30px;
+          border-radius: 40% 0 0 40%;
+        }
+        .die-num {
+          background-color: darkgreen;
+          color: white;
+          padding: 0.3rem;
+          width: 63px;
+          text-align: center;
+        }
+        .die-roll {
+          // position: absolute;
+          // bottom: 0;
+          // right: 0;
+          border-radius: 0 40% 40% 0;
+          width: 30px;
+        }
       }
     }
-    .die-card[data-number="4"] > .die-img {
-      background: no-repeat center/80% url("../images/d4.png");
+    .die-card[data-number="4"] .die-img {
+      background: no-repeat center/60% url("../images/d4.png");
     }
     .die-card[data-number="6"] > .die-img {
-      background: no-repeat center/80% url("../images/d6.png");
+      background: no-repeat center/60% url("../images/d6.png");
     }
     .die-card[data-number="8"] > .die-img {
-      background: no-repeat center/80% url("../images/d8.png");
+      background: no-repeat center/60% url("../images/d8.png");
     }
     .die-card[data-number="10"] > .die-img {
-      background: no-repeat center/80% url("../images/d10.png");
+      background: no-repeat center/60% url("../images/d10.png");
     }
     .die-card[data-number="12"] > .die-img {
-      background: no-repeat center/80% url("../images/d12.png");
+      background: no-repeat center/60% url("../images/d12.png");
     }
     .die-card[data-number="20"] > .die-img {
-      background: no-repeat center/80% url("../images/d20.png");
+      background: no-repeat center/60% url("../images/d20.png");
     }
 
     .die-card[data-number="100"] {
       grid-column: 1 / span 2;
 
       .die-img {
-        background: no-repeat center/80% url("../images/d100.png");
+        background: no-repeat center/60% url("../images/d100.png");
       }
     }
   }
