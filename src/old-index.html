@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Dan's Dungeons & Dragons Dice Rolling Site"
+    />
+    <meta
+      property="og:description"
+      content="Dan's Dungeons & Dragons Dice Rolling Site"
+    />
+    <meta
+      property="og:title"
+      content="Dan's Dungeons & Dragons Dice Rolling Site"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="https://dansdice.netlify.app/" />
+    <title>Dan's Dungeons & Dragons Dice Rolling Site</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/test.css" />
+  </head>
+  <body>
+    <!-- <div class="test-wrapper">
+      <div class="test-card">
+        <img src="images/d20.png" class="test-img"></img>
+        <div class="test-btns-wrapper">
+          <button class="test-btn test-btn-plus">+</button>
+          <div class="test-btn test-btn-text">d4</div>
+          <button class="test-btn test-btn-roll">@</button>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="wrapper">
+      <header><h1>Dan's D&D Dice</h1></header>
+      <div class="dice">
+        <div class="die-card" data-number="4">
+            <div class="die-img" data-number="4"></div>
+          
+          <div class="die-btn-wrapper">
+            <button class="die-btn die-plus" data-number="4">+</button>
+            <div class="die-num" data-number="4">1d4</div>
+            <button class="die-btn die-roll" data-number="4" data-counter="1">
+              @
+            </button>
+          </div>
+        </div>
+        <div class="die-card" data-number="6">
+          <div class="die-img" data-number="6"></div>
+          <div class="die-btn-wrapper">
+            <button class="die-btn die-plus" data-number="6">+</button>
+            <div class="die-num" data-number="6">1d6</div>
+            <button class="die-btn die-roll" data-number="6" data-counter="1">@</button>
+          </div>
+        </div>
+        <div class="die-card" data-number="8">
+          <div class="die-img" data-number="8"></div>
+          <div class="die-btn-wrapper">
+            <button class="die-btn die-plus" data-number="8">+</button>
+            <div class="die-num" data-number="8">1d8</div>
+            <button class="die-btn die-roll" data-number="8" data-counter="1">@</button>
+          </div>
+        </div>
+        <div class="die-card" data-number="10">
+          <div class="die-img" data-number="10"></div>
+          <div class="die-btn-wrapper">
+            <button class="die-btn die-plus" data-number="10">+</button>
+            <div class="die-num" data-number="10">1d10</div>
+            <button class="die-btn die-roll" data-number="10" data-counter="1">@</button>
+          </div>
+        </div>
+        <div class="die-card" data-number="12">
+          <div class="die-img" data-number="12"></div>
+          <div class="die-btn-wrapper">
+            <button class="die-btn die-plus" data-number="12">+</button>
+            <div class="die-num" data-number="12">1d12</div>
+            <button class="die-btn die-roll" data-number="12" data-counter="1">@</button>
+          </div>
+          
+        </div>
+        <div class="die-card" data-number="20">
+          <div class="die-img" data-number="20"></div>
+          <div class="die-btn-wrapper">
+            <button class="die-btn die-plus" data-number="20">+</button>
+            <div class="die-num" data-number="20">1d20</div>
+          <button class="die-btn die-roll" data-number="20" data-counter="1">
+            @
+          </button>
+          </div>
+          
+        </div>
+        <div class="die-card" data-number="100">
+          <div class="die-img" data-number="100"></div>
+          <div class="die-btn-wrapper">
+            <button class="die-btn die-plus" data-number="100">+</button>
+            <div class="die-num" data-number="100">1d100</div>
+            <button class="die-btn die-roll" data-number="100" data-counter="1">@</button>
+          </div>
+          
+        </div>
+      </div>
+      <div id="each-roll"></div>
+      <div id="total-roll">0</div>
+      <footer>
+        <p>A <a href="https://danbuda.com">Dan Buda</a> Joint</p>
+      </footer>
+    </div>
+
+    <!-- <div id="wrapper">
+      
+
+      <button data-number="4" class="die" id="four">
+        <img src="images/d4.png" />
+      </button>
+      <button data-number="6" class="die" id="six">
+        <img src="images/d6.png" />
+      </button>
+      <button data-number="8" class="die" id="eight">
+        <img src="images/d8.png" />
+      </button>
+      <button data-number="10" class="die" id="ten">
+        <img src="images/d10.png" />
+      </button>
+      <button data-number="12" class="die" id="twelve">
+        <img src="images/d12.png" />
+      </button>
+      <button data-number="20" class="die" id="twenty">
+        <img src="images/d20.png" />
+      </button>
+      <button data-number="100" class="die" id="hundred">
+        <img src="images/d100.png" />
+      </button>
+      <div class="dice-rolls"></div>
+      <div id="roll">0</div>
+      
+    </div> -->
+
+    <script src="js/index.js"></script>
+    <!-- <script src="js/test-btn.js"></script> -->
+  </body>
+</html>

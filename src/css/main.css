@@ -1,6 +1,8 @@
 :root {
   --black: #000;
-  --white: #fff; }
+  --white: #fff;
+  --red: red;
+  --green: green; }
 
 html {
   box-sizing: border-box;
@@ -12,104 +14,53 @@ html {
   box-sizing: inherit;
   margin: 0; }
 
-.wrapper {
-  background-color: var(--black);
-  height: 100vh; }
-  .wrapper header {
-    padding: 2rem 0; }
-    .wrapper header h1 {
-      color: var(--white);
-      text-align: center;
-      margin: 0; }
-  .wrapper .dice {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    row-gap: 25px; }
-    .wrapper .dice .die-card {
-      justify-self: center; }
-      .wrapper .dice .die-card .die-img {
-        height: 80px; }
-      .wrapper .dice .die-card .die-btn-wrapper {
-        display: flex; }
-        .wrapper .dice .die-card .die-btn-wrapper .die-btn {
-          border: none;
-          background-color: darkgreen;
-          color: white;
-          cursor: pointer;
-          outline: none; }
-        .wrapper .dice .die-card .die-btn-wrapper .die-plus {
-          width: 30px;
-          border-radius: 40% 0 0 40%; }
-        .wrapper .dice .die-card .die-btn-wrapper .die-num {
-          background-color: darkgreen;
-          color: white;
-          padding: 0.3rem;
-          width: 63px;
-          text-align: center; }
-        .wrapper .dice .die-card .die-btn-wrapper .die-roll {
-          border-radius: 0 40% 40% 0;
-          width: 30px; }
-    .wrapper .dice .die-card[data-number="4"] .die-img {
-      background: no-repeat center/60% url("../images/d4.png"); }
-    .wrapper .dice .die-card[data-number="6"] > .die-img {
-      background: no-repeat center/60% url("../images/d6.png"); }
-    .wrapper .dice .die-card[data-number="8"] > .die-img {
-      background: no-repeat center/60% url("../images/d8.png"); }
-    .wrapper .dice .die-card[data-number="10"] > .die-img {
-      background: no-repeat center/60% url("../images/d10.png"); }
-    .wrapper .dice .die-card[data-number="12"] > .die-img {
-      background: no-repeat center/60% url("../images/d12.png"); }
-    .wrapper .dice .die-card[data-number="20"] > .die-img {
-      background: no-repeat center/60% url("../images/d20.png"); }
-    .wrapper .dice .die-card[data-number="100"] {
-      grid-column: 1 / span 2; }
-      .wrapper .dice .die-card[data-number="100"] .die-img {
-        background: no-repeat center/60% url("../images/d100.png"); }
-  .wrapper #each-roll {
-    color: var(--white); }
-  .wrapper #total-roll {
-    color: var(--white); }
-  .wrapper footer {
-    text-align: center; }
-    .wrapper footer p {
-      color: var(--white); }
-      .wrapper footer p a {
-        color: var(--white); }
+.wrapper main .dice {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  row-gap: 25px; }
+  .wrapper main .dice .die-card {
+    position: relative;
+    justify-self: center; }
+    .wrapper main .dice .die-card .plus-btn {
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+      padding: 10px 15px;
+      background-color: var(--green);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer; }
+    .wrapper main .dice .die-card .plus-btn[data-number="4"] + .die-img {
+      background: no-repeat center/90% url("../images/d4.png"); }
+    .wrapper main .dice .die-card .plus-btn[data-number="6"] + .die-img {
+      background: no-repeat center/90% url("../images/d6.png"); }
+    .wrapper main .dice .die-card .plus-btn[data-number="8"] + .die-img {
+      background: no-repeat center/90% url("../images/d8.png"); }
+    .wrapper main .dice .die-card .plus-btn[data-number="10"] + .die-img {
+      background: no-repeat center/90% url("../images/d10.png"); }
+    .wrapper main .dice .die-card .plus-btn[data-number="12"] + .die-img {
+      background: no-repeat center/90% url("../images/d12.png"); }
+    .wrapper main .dice .die-card .plus-btn[data-number="20"] + .die-img {
+      background: no-repeat center/90% url("../images/d20.png"); }
+    .wrapper main .dice .die-card .plus-btn[data-number="100"] + .die-img {
+      background: no-repeat center/90% url("../images/d100.png"); }
+    .wrapper main .dice .die-card .die-img {
+      height: 80px;
+      width: 80px;
+      z-index: -1; }
 
-@keyframes rotating {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
+.wrapper main .rolls #multi-rolls {
+  height: 20px; }
 
-@keyframes natTwenty {
-  0% {
-    color: red; }
-  50% {
-    transform: scale(1.5);
-    color: red; }
-  100% {
-    transform: scale(1);
-    color: red; } }
-
-/* Can I randomize the px changes within some kind of range? */
-@keyframes shake {
-  0% {
-    transform: translate(30px, -7px);
-    color: red; }
-  25% {
-    transform: translate(-22px, 19px); }
-  50% {
-    transform: translate(13px, -22px);
-    transform: scale(1.5); }
-  75% {
-    transform: translate(-8px, 4px); }
-  100% {
-    transform: translate(42px, -3px);
-    transform: scale(1); } }
-
-.rotating {
-  animation: rotating 0.6s linear infinite; }
-
-.nat-twenty {
-  animation: shake 0.5s linear; }
+.wrapper main .rolls .roll-btns-total {
+  display: flex; }
+  .wrapper main .rolls .roll-btns-total .clear-wrapper #clear-btn {
+    background-color: var(--red);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer; }
+  .wrapper main .rolls .roll-btns-total .roll-wrapper #roll-btn {
+    background-color: var(--green);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer; }
