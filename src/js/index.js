@@ -28,6 +28,7 @@ plusBtns.forEach((btn) => {
     }
 
     rollBtnAmt.innerText = `${dieCounter}d${currentDie}`;
+    rollBtnDefault.innerText = '';
   });
 });
 

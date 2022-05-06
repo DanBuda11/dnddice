@@ -29,9 +29,34 @@ html {
   color: var(--white);
 
   header {
+    background-color: var(--white);
+    margin-bottom: 1rem;
+
+
+    .header-wrapper {
+      display: flex;
+      color: var(--black);
+
+      .header-left {
+        font-size: 90px;
+        line-height: 90px;
+        flex-basis: 50%;
+        text-align: right;
+      }
+  
+      .header-right {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-basis: 50%;
+      }
+    }
   }
 
   main {
+    height: calc(100vh - 90px - 32px);
+
     .dice {
       display: grid;
       grid-template-columns: 50% 50%;
@@ -111,8 +136,8 @@ html {
     }
     .rolls {
       #multi-rolls {
-        height: 30px;
-        font-size: 24px;
+        height: 20px;
+        font-size: 18px;
         text-align: center;
         margin-top: 1rem;
         color: var(--grey);
@@ -130,11 +155,18 @@ html {
         }
 
         .clear-wrapper {
+          width: 80px;
+          height: 80px;
+          background: var(--red);
+          border-radius: 50%;
+          text-align: center;
+
           #clear-btn {
             @include btn;
-            font-size: 4rem;
-            padding: 0.5rem 1rem;
-            background-color: var(--red);
+            font-size: 3.5rem;
+            // padding: 0.5rem 1rem;
+            // background-color: var(--red);
+            background: transparent;
           }
           p {
             margin-top: 0.3rem;
@@ -142,33 +174,50 @@ html {
         }
         #total {
           font-size: 4rem;
+          padding-top: 0.7rem;
         }
         .roll-wrapper {
-          #roll-btn {
-            @include btn;
-            background-color: var(--green);
-            padding: 1.8rem 1rem;
-            position: relative;
 
-            #roll-btn-amt {
-              font-size: 1.8rem;
+          .roll-wrapper-circle {
+            width: 80px;
+            height: 80px;
+            background: var(--green);
+            border-radius: 50%;
+            text-align: center;
+            
+            #roll-btn {
+              @include btn;
+              // background-color: var(--green);
+              // padding: 10px;
+              padding-top: 1.4rem;
+              position: relative;
+              background: transparent;
+              border: none;
+  
+              #roll-btn-amt {
+                font-size: 1.5rem;
+              }
+              #default {
+                font-size: 0.7rem;
+                font-style: italic;
+                // position: absolute;
+                // bottom: 0.9rem;
+                // left: 25%;
+                margin: 0;
+              }
             }
-            #default {
-              font-size: 0.7rem;
-              font-style: italic;
-              position: absolute;
-              bottom: 0.9rem;
-              left: 25%;
+            p {
+              margin-top: 0.3rem;
             }
           }
-          p {
-            margin-top: 0.3rem;
-          }
+         
         }
       }
     }
   }
   footer {
+    text-align: center;
+    font-size: 14px;
   }
 }
 

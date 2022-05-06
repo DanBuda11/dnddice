@@ -18,85 +18,118 @@ html {
 .wrapper {
   background-color: var(--black);
   color: var(--white); }
-  .wrapper main .dice {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    row-gap: 25px; }
-    .wrapper main .dice .die-card {
-      position: relative;
-      justify-self: center; }
-      .wrapper main .dice .die-card .plus-btn {
-        position: absolute;
-        bottom: -5px;
-        right: -5px;
-        padding: 10px 15px;
-        background-color: var(--green);
-        border-radius: 50%;
-        border: none;
-        cursor: pointer; }
-      .wrapper main .dice .die-card .plus-btn[data-number="4"] + .die-img {
-        background: no-repeat center/90% url("../images/d4.png"); }
-      .wrapper main .dice .die-card .plus-btn[data-number="6"] + .die-img {
-        background: no-repeat center/90% url("../images/d6.png"); }
-      .wrapper main .dice .die-card .plus-btn[data-number="8"] + .die-img {
-        background: no-repeat center/90% url("../images/d8.png"); }
-      .wrapper main .dice .die-card .plus-btn[data-number="10"] + .die-img {
-        background: no-repeat center/90% url("../images/d10.png"); }
-      .wrapper main .dice .die-card .plus-btn[data-number="12"] + .die-img {
-        background: no-repeat center/90% url("../images/d12.png"); }
-      .wrapper main .dice .die-card .plus-btn[data-number="20"] + .die-img {
-        background: no-repeat center/90% url("../images/d20.png"); }
-      .wrapper main .dice .die-card .plus-btn[data-number="100"] + .die-img {
-        background: no-repeat center/90% url("../images/d100.png"); }
-      .wrapper main .dice .die-card .die-img {
-        height: 80px;
-        width: 80px;
-        z-index: -1; }
-    .wrapper main .dice .die-100 {
-      grid-column: 1 / span 2; }
-  .wrapper main .rolls #multi-rolls {
-    height: 30px;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 1rem;
-    color: var(--grey); }
-  .wrapper main .rolls .roll-btns-total {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 1.25rem; }
-    .wrapper main .rolls .roll-btns-total .clear-wrapper,
-    .wrapper main .rolls .roll-btns-total .roll-wrapper {
+  .wrapper header {
+    background-color: var(--white);
+    margin-bottom: 1rem; }
+    .wrapper header .header-wrapper {
       display: flex;
-      flex-direction: column;
-      align-items: center; }
-    .wrapper main .rolls .roll-btns-total .clear-wrapper #clear-btn {
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      font-size: 4rem;
-      padding: 0.5rem 1rem;
-      background-color: var(--red); }
-    .wrapper main .rolls .roll-btns-total .clear-wrapper p {
-      margin-top: 0.3rem; }
-    .wrapper main .rolls .roll-btns-total #total {
-      font-size: 4rem; }
-    .wrapper main .rolls .roll-btns-total .roll-wrapper #roll-btn {
-      border-radius: 50%;
-      border: none;
-      cursor: pointer;
-      background-color: var(--green);
-      padding: 1.8rem 1rem;
-      position: relative; }
-      .wrapper main .rolls .roll-btns-total .roll-wrapper #roll-btn #roll-btn-amt {
-        font-size: 1.8rem; }
-      .wrapper main .rolls .roll-btns-total .roll-wrapper #roll-btn #default {
-        font-size: 0.7rem;
-        font-style: italic;
-        position: absolute;
-        bottom: 0.9rem;
-        left: 25%; }
-    .wrapper main .rolls .roll-btns-total .roll-wrapper p {
-      margin-top: 0.3rem; }
+      color: var(--black); }
+      .wrapper header .header-wrapper .header-left {
+        font-size: 90px;
+        line-height: 90px;
+        flex-basis: 50%;
+        text-align: right; }
+      .wrapper header .header-wrapper .header-right {
+        margin: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-basis: 50%; }
+  .wrapper main {
+    height: calc(100vh - 90px - 32px); }
+    .wrapper main .dice {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      row-gap: 25px; }
+      .wrapper main .dice .die-card {
+        position: relative;
+        justify-self: center; }
+        .wrapper main .dice .die-card .plus-btn {
+          position: absolute;
+          bottom: -5px;
+          right: -5px;
+          padding: 10px 15px;
+          background-color: var(--green);
+          border-radius: 50%;
+          border: none;
+          cursor: pointer; }
+        .wrapper main .dice .die-card .plus-btn[data-number="4"] + .die-img {
+          background: no-repeat center/90% url("../images/d4.png"); }
+        .wrapper main .dice .die-card .plus-btn[data-number="6"] + .die-img {
+          background: no-repeat center/90% url("../images/d6.png"); }
+        .wrapper main .dice .die-card .plus-btn[data-number="8"] + .die-img {
+          background: no-repeat center/90% url("../images/d8.png"); }
+        .wrapper main .dice .die-card .plus-btn[data-number="10"] + .die-img {
+          background: no-repeat center/90% url("../images/d10.png"); }
+        .wrapper main .dice .die-card .plus-btn[data-number="12"] + .die-img {
+          background: no-repeat center/90% url("../images/d12.png"); }
+        .wrapper main .dice .die-card .plus-btn[data-number="20"] + .die-img {
+          background: no-repeat center/90% url("../images/d20.png"); }
+        .wrapper main .dice .die-card .plus-btn[data-number="100"] + .die-img {
+          background: no-repeat center/90% url("../images/d100.png"); }
+        .wrapper main .dice .die-card .die-img {
+          height: 80px;
+          width: 80px;
+          z-index: -1; }
+      .wrapper main .dice .die-100 {
+        grid-column: 1 / span 2; }
+    .wrapper main .rolls #multi-rolls {
+      height: 20px;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 1rem;
+      color: var(--grey); }
+    .wrapper main .rolls .roll-btns-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.25rem; }
+      .wrapper main .rolls .roll-btns-total .clear-wrapper,
+      .wrapper main .rolls .roll-btns-total .roll-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      .wrapper main .rolls .roll-btns-total .clear-wrapper {
+        width: 80px;
+        height: 80px;
+        background: var(--red);
+        border-radius: 50%;
+        text-align: center; }
+        .wrapper main .rolls .roll-btns-total .clear-wrapper #clear-btn {
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          font-size: 3.5rem;
+          background: transparent; }
+        .wrapper main .rolls .roll-btns-total .clear-wrapper p {
+          margin-top: 0.3rem; }
+      .wrapper main .rolls .roll-btns-total #total {
+        font-size: 4rem;
+        padding-top: 0.7rem; }
+      .wrapper main .rolls .roll-btns-total .roll-wrapper .roll-wrapper-circle {
+        width: 80px;
+        height: 80px;
+        background: var(--green);
+        border-radius: 50%;
+        text-align: center; }
+        .wrapper main .rolls .roll-btns-total .roll-wrapper .roll-wrapper-circle #roll-btn {
+          border-radius: 50%;
+          border: none;
+          cursor: pointer;
+          padding-top: 1.4rem;
+          position: relative;
+          background: transparent;
+          border: none; }
+          .wrapper main .rolls .roll-btns-total .roll-wrapper .roll-wrapper-circle #roll-btn #roll-btn-amt {
+            font-size: 1.5rem; }
+          .wrapper main .rolls .roll-btns-total .roll-wrapper .roll-wrapper-circle #roll-btn #default {
+            font-size: 0.7rem;
+            font-style: italic;
+            margin: 0; }
+        .wrapper main .rolls .roll-btns-total .roll-wrapper .roll-wrapper-circle p {
+          margin-top: 0.3rem; }
+  .wrapper footer {
+    text-align: center;
+    font-size: 14px; }
 
 @keyframes rotating {
   from {
