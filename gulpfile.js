@@ -3,7 +3,8 @@
 const { src, dest, series, parallel, watch } = require('gulp');
 // BrowserSync for dev server and hot reloading
 const bs = require('browser-sync').create();
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
+sass.compiler = require('sass');
 // Minimize HTML
 const htmlmin = require('gulp-htmlmin');
 // Minimize & optimize CSS
@@ -46,7 +47,10 @@ const paths = {
 
 // Compile Sass to CSS in development
 function serveSass() {
-  return src(paths.devSCSS).pipe(sass()).pipe(dest(paths.devCSS)).pipe(bs.stream());
+  return src(paths.devSCSS)
+    .pipe(sass())
+    .pipe(dest(paths.devCSS))
+    .pipe(bs.stream());
 }
 
 // Task to run the BrowserSync server
@@ -136,4 +140,14 @@ exports.serve = browserSync;
 // Run gulp clean to empty dist folder
 exports.clean = clean;
 // Run gulp build to run production build
-exports.build = series(clean, parallel(buildHTML, buildFavicon, buildCSS, buildNormalize, buildJS, buildImages));
+exports.build = series(
+  clean,
+  parallel(
+    buildHTML,
+    buildFavicon,
+    buildCSS,
+    buildNormalize,
+    buildJS,
+    buildImages
+  )
+);

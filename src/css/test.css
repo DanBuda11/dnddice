@@ -1,24 +1,32 @@
 .test-wrapper {
-  background-color: black; }
-  .test-wrapper .test-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .test-wrapper .test-card .test-img {
-      height: 50px;
-      width: 50px; }
-    .test-wrapper .test-card .test-btns-wrapper {
-      display: flex; }
-      .test-wrapper .test-card .test-btns-wrapper .test-btn {
-        background-color: green;
-        color: white;
-        border: none; }
-      .test-wrapper .test-card .test-btns-wrapper .test-btn-plus {
-        border-radius: 25% 0 0 25%;
-        cursor: pointer; }
-      .test-wrapper .test-card .test-btns-wrapper .test-btn-text {
-        margin: 0 1px 0 1px;
-        padding: 0 4px; }
-      .test-wrapper .test-card .test-btns-wrapper .test-btn-roll {
-        border-radius: 0 25% 25% 0;
-        cursor: pointer; }
+  background-color: black;
+}
+.test-wrapper .test-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.test-wrapper .test-card .test-img {
+  height: 50px;
+  width: 50px;
+}
+.test-wrapper .test-card .test-btns-wrapper {
+  display: flex;
+}
+.test-wrapper .test-card .test-btns-wrapper .test-btn {
+  background-color: green;
+  color: white;
+  border: none;
+}
+.test-wrapper .test-card .test-btns-wrapper .test-btn-plus {
+  border-radius: 25% 0 0 25%;
+  cursor: pointer;
+}
+.test-wrapper .test-card .test-btns-wrapper .test-btn-text {
+  margin: 0 1px 0 1px;
+  padding: 0 4px;
+}
+.test-wrapper .test-card .test-btns-wrapper .test-btn-roll {
+  border-radius: 0 25% 25% 0;
+  cursor: pointer;
+}
