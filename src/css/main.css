@@ -64,7 +64,7 @@ html {
           bottom: -5px;
           right: -5px;
 
-          /* // z-index: 1; */
+          /* z-index: 1; */
           padding: 10px 15px;
           background-color: var(--green);
           border-radius: 50%;
@@ -111,32 +111,32 @@ html {
         grid-column: 1 / span 2;
       }
 
-      /* // .die-card[data-number="4"] .die-img {
-      //   background: no-repeat center/90% url("../images/d4.png");
-      // }
-      // .die-card[data-number="6"] > .die-img {
-      //   background: no-repeat center/90% url("../images/d6.png");
-      // }
-      // .die-card[data-number="8"] > .die-img {
-      //   background: no-repeat center/90% url("../images/d8.png");
-      // }
-      // .die-card[data-number="10"] > .die-img {
-      //   background: no-repeat center/80% url("../images/d10.png");
-      // }
-      // .die-card[data-number="12"] > .die-img {
-      //   background: no-repeat center/90% url("../images/d12.png");
-      // }
-      // .die-card[data-number="20"] > .die-img {
-      //   background: no-repeat center/80% url("../images/d20.png");
-      // }
+      /* .die-card[data-number='4'] .die-img {
+        background: no-repeat center/90% url('../images/d4.png');
+      }
+      .die-card[data-number='6'] > .die-img {
+        background: no-repeat center/90% url('../images/d6.png');
+      }
+      .die-card[data-number='8'] > .die-img {
+        background: no-repeat center/90% url('../images/d8.png');
+      }
+      .die-card[data-number='10'] > .die-img {
+        background: no-repeat center/80% url('../images/d10.png');
+      }
+      .die-card[data-number='12'] > .die-img {
+        background: no-repeat center/90% url('../images/d12.png');
+      }
+      .die-card[data-number='20'] > .die-img {
+        background: no-repeat center/80% url('../images/d20.png');
+      }
 
-      // .die-card[data-number="100"] {
-      //   // grid-column: 1 / span 2;
+      .die-card[data-number='100'] {
+        grid-column: 1 / span 2;
 
-      //   .die-img {
-      //     background: no-repeat center/90% url("../images/d100.png");
-      //   }
-      // } */
+        .die-img {
+          background: no-repeat center/90% url('../images/d100.png');
+        }
+      } */
     }
 
     .rolls {
@@ -172,10 +172,10 @@ html {
             border: none;
             cursor: pointer;
             font-size: 3.5rem;
+            padding: 0.5rem 1rem;
 
-            /* // padding: 0.5rem 1rem;
-            // background-color: var(--red); */
-            background: transparent;
+            /* background-color: var(--red);
+            background: transparent; */
           }
 
           & p {
@@ -201,11 +201,11 @@ html {
               border: none;
               cursor: pointer;
 
-              /* // background-color: var(--green);
-              // padding: 10px; */
-              padding-top: 1.4rem;
+              /* padding: 10px;
+              padding-top: 1.4rem; */
               position: relative;
               background: transparent;
+              background-color: var(--green);
 
               #roll-btn-amt {
                 font-size: 1.5rem;
@@ -214,11 +214,11 @@ html {
               #default {
                 font-size: 0.7rem;
                 font-style: italic;
+                position: absolute;
 
-                /* // position: absolute;
-                // bottom: 0.9rem;
-                // left: 25%; */
-                margin: 0;
+                /* bottom: 0.9rem;
+                left: 25%;
+                margin: 0; */
               }
             }
 
