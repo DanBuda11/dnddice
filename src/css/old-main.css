@@ -9,8 +9,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
   margin: 0;
 }
@@ -18,90 +18,144 @@ html {
 .wrapper {
   background-color: var(--black);
   height: 100vh;
+
+  & header {
+    padding: 2rem 0;
+    & h1 {
+      color: var(--white);
+      text-align: center;
+      margin: 0;
+    }
+  }
+  .dice {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    row-gap: 25px;
+
+    .die-card {
+      justify-self: center;
+      // display: flex;
+      // flex-direction: column;
+      // position: relative;
+      // height: 80px;
+      // width: 80px;
+      // width: 70px;
+      // margin: 0.5rem;
+
+      .die-img {
+        height: 80px;
+        // height: 100%;
+        // width: 100%;
+        // align-self: center;
+      }
+
+      .die-btn-wrapper {
+        display: flex;
+
+        .die-btn {
+          // border-radius: 50%;
+          border: none;
+          background-color: darkgreen;
+          color: white;
+          cursor: pointer;
+          outline: none;
+          // padding: 0.3rem 0.6rem;
+        }
+        .die-plus {
+          // position: absolute;
+          // bottom: 0;
+          // left: 0;
+          width: 30px;
+          border-radius: 40% 0 0 40%;
+        }
+        .die-num {
+          background-color: darkgreen;
+          color: white;
+          padding: 0.3rem;
+          width: 63px;
+          text-align: center;
+        }
+        .die-roll {
+          // position: absolute;
+          // bottom: 0;
+          // right: 0;
+          border-radius: 0 40% 40% 0;
+          width: 30px;
+        }
+      }
+    }
+    .die-card[data-number="4"] .die-img {
+      background: no-repeat center/60% url("../images/d4.png");
+    }
+    .die-card[data-number="6"] > .die-img {
+      background: no-repeat center/60% url("../images/d6.png");
+    }
+    .die-card[data-number="8"] > .die-img {
+      background: no-repeat center/60% url("../images/d8.png");
+    }
+    .die-card[data-number="10"] > .die-img {
+      background: no-repeat center/60% url("../images/d10.png");
+    }
+    .die-card[data-number="12"] > .die-img {
+      background: no-repeat center/60% url("../images/d12.png");
+    }
+    .die-card[data-number="20"] > .die-img {
+      background: no-repeat center/60% url("../images/d20.png");
+    }
+
+    .die-card[data-number="100"] {
+      grid-column: 1 / span 2;
+
+      .die-img {
+        background: no-repeat center/60% url("../images/d100.png");
+      }
+    }
+  }
+  #each-roll {
+    color: var(--white);
+  }
+  #total-roll {
+    color: var(--white);
+  }
+  & footer {
+    text-align: center;
+    & p {
+      color: var(--white);
+      & a {
+        color: var(--white);
+      }
+    }
+  }
 }
-.wrapper header {
-  padding: 2rem 0;
-}
-.wrapper header h1 {
-  color: var(--white);
-  text-align: center;
-  margin: 0;
-}
-.wrapper .dice {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  row-gap: 25px;
-}
-.wrapper .dice .die-card {
-  justify-self: center;
-}
-.wrapper .dice .die-card .die-img {
-  height: 80px;
-}
-.wrapper .dice .die-card .die-btn-wrapper {
-  display: flex;
-}
-.wrapper .dice .die-card .die-btn-wrapper .die-btn {
-  border: none;
-  background-color: darkgreen;
-  color: white;
-  cursor: pointer;
-  outline: none;
-}
-.wrapper .dice .die-card .die-btn-wrapper .die-plus {
-  width: 30px;
-  border-radius: 40% 0 0 40%;
-}
-.wrapper .dice .die-card .die-btn-wrapper .die-num {
-  background-color: darkgreen;
-  color: white;
-  padding: 0.3rem;
-  width: 63px;
-  text-align: center;
-}
-.wrapper .dice .die-card .die-btn-wrapper .die-roll {
-  border-radius: 0 40% 40% 0;
-  width: 30px;
-}
-.wrapper .dice .die-card[data-number="4"] .die-img {
-  background: no-repeat center/60% url("../images/d4.png");
-}
-.wrapper .dice .die-card[data-number="6"] > .die-img {
-  background: no-repeat center/60% url("../images/d6.png");
-}
-.wrapper .dice .die-card[data-number="8"] > .die-img {
-  background: no-repeat center/60% url("../images/d8.png");
-}
-.wrapper .dice .die-card[data-number="10"] > .die-img {
-  background: no-repeat center/60% url("../images/d10.png");
-}
-.wrapper .dice .die-card[data-number="12"] > .die-img {
-  background: no-repeat center/60% url("../images/d12.png");
-}
-.wrapper .dice .die-card[data-number="20"] > .die-img {
-  background: no-repeat center/60% url("../images/d20.png");
-}
-.wrapper .dice .die-card[data-number="100"] {
-  grid-column: 1/span 2;
-}
-.wrapper .dice .die-card[data-number="100"] .die-img {
-  background: no-repeat center/60% url("../images/d100.png");
-}
-.wrapper #each-roll {
-  color: var(--white);
-}
-.wrapper #total-roll {
-  color: var(--white);
-}
-.wrapper footer {
-  text-align: center;
-}
-.wrapper footer p {
-  color: var(--white);
-}
-.wrapper footer p a {
-  color: var(--white);
-}
+
+// .wrapper {
+//   // display: flex;
+//   // flex-wrap: wrap;
+//   // justify-content: space-evenly;
+//   // align-items: center;
+//   /* display: grid; */
+//   /* grid-template-columns: 50% 50%; */
+//   /* grid-template-rows: 10% (80% / 5) (80% / 5) (80% / 5) (80% / 5) (80% / 5) 10%; */
+//   /* justify-items: center; */
+//   /* align-items: center; */
+//   /* display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center; */
+//   // height: 100vh;
+//   // background-color: #000;
+// }
+
+// header {
+//   /* grid-column: 1 / span 2; */
+//   flex-basis: 100%;
+//   padding: 2rem;
+//   text-align: center;
+// }
+
+// h1 {
+//   margin: 0;
+//   color: #fff;
+// }
 
 @keyframes rotating {
   from {
@@ -111,6 +165,7 @@ html {
     transform: rotate(360deg);
   }
 }
+
 @keyframes natTwenty {
   0% {
     color: red;
@@ -124,6 +179,7 @@ html {
     color: red;
   }
 }
+
 /* Can I randomize the px changes within some kind of range? */
 @keyframes shake {
   0% {
@@ -145,6 +201,7 @@ html {
     transform: scale(1);
   }
 }
+
 .rotating {
   animation: rotating 0.6s linear infinite;
 }
@@ -152,3 +209,80 @@ html {
 .nat-twenty {
   animation: shake 0.5s linear;
 }
+
+// .die-wrapper {
+//   flex-basis: 50%;
+//   position: relative;
+//   z-index: 1;
+// }
+
+// .die-img {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   z-index: 2;
+// }
+
+// .die-btn {
+//   background-color: red;
+//   border-radius: 50%;
+//   font-size: 25px;
+//   padding: 1rem;
+//   width: 50px;
+//   border: none;
+//   color: white;
+//   z-index: 3;
+// }
+
+// .die-btn-plus {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+// }
+
+// .die-btn-roll {
+//   position: absolute;
+//   bottom: 0;
+//   right: 0;
+// }
+
+// .die {
+//   flex-basis: 50%;
+//   border: none;
+//   /* height: 80px; */
+//   background-color: transparent;
+// }
+
+// img {
+//   height: 80px;
+// }
+
+// #hundred {
+//   flex-basis: 100%;
+//   /* grid-column: 1 / span 2; */
+// }
+
+// #roll {
+//   /* grid-column: 1 / span 2; */
+
+//   font-size: 5rem;
+//   color: lightblue;
+// }
+
+// footer {
+//   flex-basis: 100%;
+//   /* grid-row: 7; */
+//   /* grid-column: 1 / span 2; */
+//   /* flex-basis: 100%; */
+//   color: #fff;
+// }
+
+// footer p {
+//   margin: 0;
+//   font-size: 10px;
+// }
+
+// footer p a {
+//   /* color: #000; */
+//   color: #fff;
+// }
