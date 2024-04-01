@@ -72,8 +72,10 @@ html {
           cursor: pointer;
         }
 
-        .plus-btn[data-number='4'] + .die-img {
-          background: no-repeat center/90% url('../images/d4.png');
+        .plus-btn[data-number='4'] {
+          + .die-img {
+            background: no-repeat center/90% url('../images/d4.png');
+          }
         }
 
         .plus-btn[data-number='6'] + .die-img {
