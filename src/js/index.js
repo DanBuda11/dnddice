@@ -23,7 +23,10 @@ plusBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     // if currentDie is already equal to the die of the plusBtn clicked, then add 1 to the dieCounter
     // if currentDie isn't equal to the die plusBtn, change currentDie to this die & set counter to 1
-    if (currentDie === parseInt(e.target.dataset.number, 10) || currentDie === e.target.dataset.number) {
+    if (
+      currentDie === parseInt(e.target.dataset.number, 10) ||
+      currentDie === e.target.dataset.number
+    ) {
       dieCounter += 1;
     } else {
       dieCounter = 1;
@@ -52,7 +55,9 @@ function rollDie(x, y) {
   // Empty the multi roll section contents if any
   multiRollSection.innerText = '';
   // Start the rolled die image spinning
-  document.querySelector(`.plus-btn[data-number="${y}"]`).nextElementSibling.classList.add('rotating');
+  document
+    .querySelector(`.plus-btn[data-number="${y}"]`)
+    .nextElementSibling.classList.add('rotating');
   // Remove "default" from roll button until roll over
   rollBtnDefault.innerText = '';
   // Disable buttons while roll is going on
@@ -63,7 +68,9 @@ function rollDie(x, y) {
 
   // Stop the rolled die image spinning after a set time
   setTimeout(() => {
-    document.querySelector(`.plus-btn[data-number="${y}"]`).nextElementSibling.classList.remove('rotating');
+    document
+      .querySelector(`.plus-btn[data-number="${y}"]`)
+      .nextElementSibling.classList.remove('rotating');
     plusBtns.forEach((btn) => {
       btn.removeAttribute('disabled');
     });
