@@ -1,3 +1,6 @@
+import '../css/normalize.css';
+import '../css/main.css';
+
 // const dieCards = document.querySelectorAll('.die-card');
 // const dieImgs = document.querySelectorAll('.die-img');
 const plusBtns = document.querySelectorAll('.plus-btn');
