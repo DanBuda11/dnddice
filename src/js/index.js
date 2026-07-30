@@ -1,5 +1,4 @@
 import '../css/main.css';
-
 import { registerSW } from 'virtual:pwa-register';
 
 registerSW({
@@ -22,6 +21,26 @@ let rollSum = 0;
 // Used inside the roll function setInterval to tell when the final die of a roll has been rolled
 // let rollCounter = 0;
 
+function updateRollButton() {
+  rollBtnAmt.textContent = `${dieCounter}d${currentDie}`;
+}
+
+function disableControls() {
+  plusBtns.forEach((btn) => {
+    btn.disabled = true;
+  });
+
+  rollBtn.disabled = true;
+}
+
+function enableControls() {
+  plusBtns.forEach((btn) => {
+    btn.disabled = false;
+  });
+
+  rollBtn.disabled = false;
+}
+
 plusBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     // if currentDie is already equal to the die of the plusBtn clicked, then add 1 to the dieCounter
@@ -35,15 +54,15 @@ plusBtns.forEach((btn) => {
       currentDie = die;
     }
 
-    rollBtnAmt.innerText = `${dieCounter}d${currentDie}`;
-    rollBtnDefault.innerText = '';
+    updateRollButton();
+    rollBtnDefault.textContent = '';
   });
 });
 
 clearBtn.addEventListener('click', () => {
   dieCounter = 1;
   currentDie = 20;
-  rollBtnAmt.innerText = `${dieCounter}d${currentDie}`;
+  updateRollButton();
 });
 
 // function to make the roll(s). x is the value of dieCounter and y is the value of currentDie
@@ -51,32 +70,26 @@ function rollDie(x, y) {
   console.log(x, y);
   total.classList.remove('nat-twenty');
   total.classList.remove('nat-one');
-  total.innerText = '';
+  total.textContent = '';
 
   // const rollCounter = 0;
   // Empty the multi roll section contents if any
-  multiRollSection.innerText = '';
+  multiRollSection.textContent = '';
   // Start the rolled die image spinning
   document
     .querySelector(`.plus-btn[data-number="${y}"]`)
     .nextElementSibling.classList.add('rotating');
   // Remove "default" from roll button until roll over
-  rollBtnDefault.innerText = '';
+  rollBtnDefault.textContent = '';
   // Disable buttons while roll is going on
-  plusBtns.forEach((btn) => {
-    btn.setAttribute('disabled', 'disabled');
-  });
-  rollBtn.setAttribute('disabled', 'disabled');
+  disableControls();
 
   // Stop the rolled die image spinning after a set time
   setTimeout(() => {
     document
       .querySelector(`.plus-btn[data-number="${y}"]`)
       .nextElementSibling.classList.remove('rotating');
-    plusBtns.forEach((btn) => {
-      btn.removeAttribute('disabled');
-    });
-    rollBtn.removeAttribute('disabled');
+    enableControls();
   }, rollTime);
 
   // Actual rolling
@@ -89,7 +102,7 @@ function rollDie(x, y) {
   // show finals after rollTime amount of time
   setTimeout(() => {
     if (x > 1) {
-      multiRollSection.innerText = multiRoll.join(' + ');
+      multiRollSection.textContent = multiRoll.join(' + ');
     }
 
     if (y === 20 && x === 1) {
@@ -101,7 +114,7 @@ function rollDie(x, y) {
       }
     }
 
-    total.innerText = rollSum;
+    total.textContent = rollSum;
   }, rollTime);
 
   // -----------------------------------------------------------------------------
@@ -126,10 +139,10 @@ function rollDie(x, y) {
 
   //     // show stuff if a multi-die roll
   //     if (x > 1) {
-  //       multiRollSection.innerText = multiRoll.join(' + ');
+  //       multiRollSection.textContent = multiRoll.join(' + ');
   //     }
 
-  //     total.innerText = rollSum;
+  //     total.textContent = rollSum;
   //     clearInterval(interval);
   //   } else {
   //     rollCounter += 1;
@@ -162,8 +175,8 @@ function reset() {
     currentDie = 20;
     multiRoll = [];
     rollSum = 0;
-    rollBtnAmt.innerText = `${dieCounter}d${currentDie}`;
-    rollBtnDefault.innerText = 'DEFAULT';
+    updateRollButton();
+    rollBtnDefault.textContent = 'DEFAULT';
     // rollCounter = 0;
   }, rollTime);
 }
