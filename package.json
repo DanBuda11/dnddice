@@ -53,6 +53,8 @@
     "stylelint": "^17.14.1",
     "stylelint-config-recommended": "^18.0.0",
     "vite": "^8.1.5",
-    "vite-plugin-pwa": "^1.3.0"
+    "vite-plugin-pwa": "^1.3.0",
+    "workbox-build": "^7.4.1",
+    "workbox-window": "^7.4.1"
   }
 }

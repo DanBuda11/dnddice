@@ -1,8 +1,11 @@
-import '../css/normalize.css';
 import '../css/main.css';
 
-// const dieCards = document.querySelectorAll('.die-card');
-// const dieImgs = document.querySelectorAll('.die-img');
+import { registerSW } from 'virtual:pwa-register';
+
+registerSW({
+  immediate: true,
+});
+
 const plusBtns = document.querySelectorAll('.plus-btn');
 const multiRollSection = document.getElementById('multi-rolls');
 const clearBtn = document.getElementById('clear-btn');
@@ -23,14 +26,13 @@ plusBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     // if currentDie is already equal to the die of the plusBtn clicked, then add 1 to the dieCounter
     // if currentDie isn't equal to the die plusBtn, change currentDie to this die & set counter to 1
-    if (
-      currentDie === parseInt(e.target.dataset.number, 10) ||
-      currentDie === e.target.dataset.number
-    ) {
+    const die = Number(e.target.dataset.number);
+
+    if (currentDie === die) {
       dieCounter += 1;
     } else {
       dieCounter = 1;
-      currentDie = e.target.dataset.number;
+      currentDie = die;
     }
 
     rollBtnAmt.innerText = `${dieCounter}d${currentDie}`;
@@ -102,6 +104,14 @@ function rollDie(x, y) {
     total.innerText = rollSum;
   }, rollTime);
 
+  // -----------------------------------------------------------------------------
+  // Future enhancement:
+  //
+  // Reveal each die roll progressively during the roll animation instead of
+  // displaying all rolls at once. The code below was an earlier experiment toward
+  // that feature. Leaving it here as a reference until the rest of the app is
+  // refactored and the rolling logic is separated from the UI.
+  // -----------------------------------------------------------------------------
   // Set up a setInterval to show total sum at end of rotating animation (both at same time)
   // and to show the multi rolls individually as each is rolled split evenly within the
   // setInterval total time
