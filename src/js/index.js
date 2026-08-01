@@ -16,10 +16,6 @@ const rollBtnDefault = document.getElementById('default');
 const rollTime = 1000;
 let dieCounter = 1;
 let currentDie = 20;
-let multiRoll = [];
-let rollSum = 0;
-// Used inside the roll function setInterval to tell when the final die of a roll has been rolled
-// let rollCounter = 0;
 
 function updateRollButton() {
   rollBtnAmt.textContent = `${dieCounter}d${currentDie}`;
@@ -43,8 +39,6 @@ function enableControls() {
 
 plusBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
-    // if currentDie is already equal to the die of the plusBtn clicked, then add 1 to the dieCounter
-    // if currentDie isn't equal to the die plusBtn, change currentDie to this die & set counter to 1
     const die = Number(e.target.dataset.number);
 
     if (currentDie === die) {
@@ -65,14 +59,28 @@ clearBtn.addEventListener('click', () => {
   updateRollButton();
 });
 
-// function to make the roll(s). x is the value of dieCounter and y is the value of currentDie
+function rollDice(dieCount, dieSides) {
+  const rolls = [];
+  let total = 0;
+
+  for (let i = 0; i < dieCount; i += 1) {
+    const roll = Math.ceil(Math.random() * dieSides);
+
+    rolls.push(roll);
+    total += roll;
+  }
+
+  return {
+    rolls,
+    total,
+  };
+}
+
 function rollDie(dieCount, dieSides) {
-  console.log(dieCount, dieSides);
   totalDisplay.classList.remove('nat-twenty');
   totalDisplay.classList.remove('nat-one');
   totalDisplay.textContent = '';
 
-  // const rollCounter = 0;
   // Empty the multi roll section contents if any
   multiRollSection.textContent = '';
   // Start the rolled die image spinning
@@ -84,38 +92,30 @@ function rollDie(dieCount, dieSides) {
 
   // Remove "default" from roll button until roll over
   rollBtnDefault.textContent = '';
-  // Disable buttons while roll is going on
   disableControls();
 
-  // Stop the rolled die image spinning after a set time
   setTimeout(() => {
     dieImage.classList.remove('rotating');
     enableControls();
   }, rollTime);
 
-  // Actual rolling
-  for (let i = 0; i < dieCount; i += 1) {
-    const roll = Math.ceil(Math.random() * dieSides);
-    multiRoll.push(roll);
-    rollSum += roll;
-  }
+  const { rolls, total } = rollDice(dieCount, dieSides);
 
-  // show finals after rollTime amount of time
   setTimeout(() => {
     if (dieCount > 1) {
-      multiRollSection.textContent = multiRoll.join(' + ');
+      multiRollSection.textContent = rolls.join(' + ');
     }
 
     if (dieSides === 20 && dieCount === 1) {
-      if (rollSum === 20) {
+      if (total === 20) {
         totalDisplay.classList.add('nat-twenty');
       }
-      if (rollSum === 1) {
+      if (total === 1) {
         totalDisplay.classList.add('nat-one');
       }
     }
 
-    totalDisplay.textContent = rollSum;
+    totalDisplay.textContent = total;
   }, rollTime);
 
   // -----------------------------------------------------------------------------
@@ -174,8 +174,8 @@ function reset() {
   setTimeout(() => {
     dieCounter = 1;
     currentDie = 20;
-    multiRoll = [];
-    rollSum = 0;
+    // rolls = [];
+    // total = 0;
     updateRollButton();
     rollBtnDefault.textContent = 'DEFAULT';
     // rollCounter = 0;
